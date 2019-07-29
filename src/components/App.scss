@@ -1,0 +1,19 @@
+.formLabel {
+    display: block;
+}
+
+input {
+    margin-bottom: 10px;
+
+    &::invalid {
+        background-color: #ffdddd;
+    }
+}
+
+.errorMessage {
+    color: #F00;
+}
+
+button {
+    display: block;
+}
