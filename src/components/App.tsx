@@ -66,7 +66,15 @@ class App extends Component<{}, {}> {
                             >
                                 First Name
                             </label>
-                            <Field type="firstName" name="firstName" />
+                            <Field
+                                name="firstName"
+                                className={
+                                    formikBag.errors.firstName &&
+                                    formikBag.touched.firstName
+                                        ? styles.invalid
+                                        : ''
+                                }
+                            />
                             <ErrorMessage
                                 className={styles.errorMessage}
                                 name="firstName"
@@ -79,7 +87,15 @@ class App extends Component<{}, {}> {
                             >
                                 Last Name
                             </label>
-                            <Field type="lastName" name="lastName" />
+                            <Field
+                                name="lastName"
+                                className={
+                                    formikBag.errors.lastName &&
+                                    formikBag.touched.lastName
+                                        ? styles.invalid
+                                        : ''
+                                }
+                            />
                             <ErrorMessage
                                 className={styles.errorMessage}
                                 name="lastName"
@@ -89,7 +105,18 @@ class App extends Component<{}, {}> {
                             <label className={styles.formLabel} htmlFor="email">
                                 Email
                             </label>
-                            <Field type="email" name="email" />
+                            <Field
+                                name="email"
+                                className={
+                                    formikBag.errors.email &&
+                                    formikBag.touched.email
+                                        ? styles.invalid
+                                        : ''
+                                }
+                                aria-required="true"
+                                aria-invalid={!!formikBag.errors.email}
+                                aria-describedby="emailError"
+                            />
                             <ErrorMessage
                                 className={styles.errorMessage}
                                 name="email"
@@ -102,6 +129,10 @@ class App extends Component<{}, {}> {
                             >
                                 Submit
                             </button>
+                            <pre>
+                                <strong>props</strong> ={' '}
+                                {JSON.stringify(formikBag, null, 2)}
+                            </pre>
                         </Form>
                     )}
                 </Formik>

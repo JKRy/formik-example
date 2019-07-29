@@ -1,19 +1,24 @@
-.formLabel {
+.formLabel,
+button {
     display: block;
 }
 
 input {
     margin-bottom: 10px;
+}
 
-    &::invalid {
-        background-color: #ffdddd;
-    }
+.invalid {
+    background-color: #ffdddd;
+    box-shadow: 0 0 1.5px 1px red
 }
 
 .errorMessage {
     color: #F00;
+    font-style: italic;
 }
 
-button {
-    display: block;
+pre {
+    background: #f6f8fa;
+    font-size: .65rem;
+    padding: .5rem;
 }
